@@ -5,7 +5,7 @@ syntax enable
 set nocompatible
 filetype plugin on
 
-call plug#begin(''~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Directory access with '-'
 Plug 'tpope/vim-vinegar'
