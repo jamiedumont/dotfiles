@@ -1,0 +1,20 @@
+[alias]
+	a = add --all
+	ai = add -i
+	#############
+
+
+
+[push]
+  # Make `git push` automatically push relevant
+  # annotated tags when pushing branches out.
+  followTags = true
+
+
+
+[user]
+	name = Jamie Dumont
+	email = jamiedumont@icloud.com
+
+  # Don't guess the user's identity.
+  useConfigOnly = true
