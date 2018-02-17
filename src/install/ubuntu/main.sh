@@ -11,7 +11,7 @@ upgrade
 
 ./build-essentials.sh
 ./git.sh
-./neovim.sh
 ./tmux.sh
+./vim.sh
 
 ./cleanup.sh

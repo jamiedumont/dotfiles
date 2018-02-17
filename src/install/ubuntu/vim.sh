@@ -6,8 +6,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n   neovim\n\n"
+print_in_purple "\n   Vim\n\n"
 
 install_package "software-properties-common"
-add_apt_repo "ppa:neovim-ppa/stable"
-install_package "neovim"
+add_apt_repo "ppa:jonathonf/vim"
+update
+install_package "vim" "Vim"
