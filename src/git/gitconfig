@@ -2,6 +2,26 @@
 	a = add --all
 	ai = add -i
 	#############
+  b = branch
+  #############
+  c = commit
+  cm = commit -m
+  #############
+  cl = clone
+  #############
+	f = fetch
+  #############
+	pl = pull
+  pb = pull --rebase
+  #############
+	plo = pull origin
+	pbo = pull --rebase origin
+  #############
+	r = remote
+	ra = remote add
+	rr = remote rm
+  #############
+	s = status
 
 
 
