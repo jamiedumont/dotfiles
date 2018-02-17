@@ -86,19 +86,18 @@ main() {
 
 
 
-	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-	# Ensure the OS is supported and
-    	# it's above the required version.
+  # Ensure the OS is supported and
+  # it's above the required version.
 
-    	verify_os \
-        	|| exit 1
+   verify_os \
+     || exit 1
 
 
-    	# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-./create_symbolic_links.sh "$@"
+  ./create_symbolic_links.sh "$@"
 
-	./install/main.sh
+  ./install/main.sh
 
 
 }

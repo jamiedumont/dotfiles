@@ -48,8 +48,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 
 " Search
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
