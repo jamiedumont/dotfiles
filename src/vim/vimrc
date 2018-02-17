@@ -1,0 +1,119 @@
+" Activate syntax highlighting
+syntax enable
+
+" Not sure what to comment here...
+set nocompatible
+filetype plugin on
+
+call plug#begin(''~/.vim/plugged')
+
+" Directory access with '-'
+Plug 'tpope/vim-vinegar'
+
+" Emmet keyboard shortcuts
+Plug 'mattn/emmet-vim'
+
+" Config Vim for writing
+" Plug 'reedes/vim-pencil'
+
+" Status bar
+Plug 'vim-airline/vim-airline'
+
+" Theme
+Plug 'whatyouhide/vim-gotham'
+
+" Language support
+Plug 'sheerun/vim-polyglot'
+
+" Linting and file checking
+" Plug 'neomake/neomake'
+" autocmd! BufWritePost * Neomake
+" let g:neomake_javascript_enabled_makers = ['eslint']
+
+" Alchemist (Elixir) tools
+Plug 'slashmili/alchemist.vim'
+let g:alchemist_tag_disable = 1
+
+
+" Git diffs
+Plug 'airblade/vim-gitgutter'
+
+
+" Deoplete for autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
+" Split vim and tmux panes with Ctrl + direction
+Plug 'christoomey/vim-tmux-navigator'
+
+
+" Search
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
+" Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+call deoplete#enable()
+
+" PENCIL
+
+" Set 'soft' as default wrap mode for pencil...
+" let g:pencil#wrapModeDefault = 'hard'
+
+" ...which wrap automatically at..
+" let g:pencil#textwidth = 80
+
+" .. and is automatically enabled for these file types
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"   autocmd FileType text         call pencil#init()
+" augroup END
+
+
+
+" Set colourscheme
+colorscheme gotham
+
+" Use csscomplete function (Plug)
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
+" Allow vim<>system clipboard
+set clipboard=unnamed
+
+" Remap leader to spacebar
+let mapleader = "\<Space>"
+
+" Map 'save' to leader
+nnoremap <Leader>w :w<CR>
+
+" Map <Leader>, to clear search
+map <Leader>, :noh<CR>
+
+" Map 'FZF :Files' to leader
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>pf :GFiles<CR>
+
+" Use <Space> + wv/wh to create splits
+nnoremap <Leader>wv :vsplit<CR>
+nnoremap <Leader>wh :split<CR>
+
+" Open :Explore with <Space>e
+nnoremap <Leader>e :Vexplore<CR>
+
+" Show invisibles (tabs and trailing spaces)
+set list
+set listchars=tab:»-,trail:·
+
+" Remap <Esc> to something faster
+imap fd <esc>
+imap jk <esc>
+
+set number relativenumber
+set splitbelow
+set splitright
+set showmatch
+set ruler
+set expandtab
+set tabstop=2
+set shiftwidth=2
