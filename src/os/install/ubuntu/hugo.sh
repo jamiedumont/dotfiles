@@ -6,19 +6,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-update
-upgrade
+print_in_purple "\n   Hugo\n\n"
 
-./build-essentials.sh
-./caddy.sh
-#./docker.sh
-./elixir.sh
-./fzf.sh
-./git.sh
-./hugo.sh
-./node.sh
-./php.sh
-./tmux.sh
-
-
-./cleanup.sh
+install_package "Hugo" "hugo"
