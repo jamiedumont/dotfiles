@@ -50,7 +50,6 @@ create_symlinks() {
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
         if [ ! -e "$targetFile" ] || $skipQuestions; then
-            echo "Creating symlink for $i"
             execute \
                 "ln -fs $sourceFile $targetFile" \
                 "$targetFile → $sourceFile"
