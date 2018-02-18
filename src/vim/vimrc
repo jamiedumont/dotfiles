@@ -20,8 +20,6 @@ Plug 'tpope/vim-vinegar'
 " Emmet keyboard shortcuts
 Plug 'mattn/emmet-vim'
 
-" Config Vim for writing
-" Plug 'reedes/vim-pencil'
 
 " Status bar
 Plug 'vim-airline/vim-airline'
@@ -32,10 +30,6 @@ Plug 'whatyouhide/vim-gotham'
 " Language support
 Plug 'sheerun/vim-polyglot'
 
-" Linting and file checking
-" Plug 'neomake/neomake'
-" autocmd! BufWritePost * Neomake
-" let g:neomake_javascript_enabled_makers = ['eslint']
 
 " Alchemist (Elixir) tools
 Plug 'slashmili/alchemist.vim'
@@ -44,10 +38,6 @@ let g:alchemist_tag_disable = 1
 
 " Git diffs
 Plug 'airblade/vim-gitgutter'
-
-
-" Deoplete for autocompletion
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 
 " Split vim and tmux panes with Ctrl + direction
@@ -59,24 +49,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-" call deoplete#enable()
-
-" PENCIL
-
-" Set 'soft' as default wrap mode for pencil...
-" let g:pencil#wrapModeDefault = 'hard'
-
-" ...which wrap automatically at..
-" let g:pencil#textwidth = 80
-
-" .. and is automatically enabled for these file types
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd call pencil#init()
-"   autocmd FileType text         call pencil#init()
-" augroup END
-
 
 
 " Set colourscheme
@@ -113,7 +85,6 @@ set list
 set listchars=tab:»-,trail:·
 
 " Remap <Esc> to something faster
-imap fd <esc>
 imap jk <esc>
 
 set number relativenumber
