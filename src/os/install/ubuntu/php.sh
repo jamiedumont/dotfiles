@@ -6,18 +6,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-update
-upgrade
+print_in_purple "\n   PHP\n\n"
 
-./build-essentials.sh
-./caddy.sh
-#./docker.sh
-./elixir.sh
-./fzf.sh
-./git.sh
-./node.sh
-./php.sh
-./tmux.sh
+install_package "PHP 7 CLI" "php7.0-cli"
 
-
-./cleanup.sh
+install_package "PHP 7 FPM" "php7.0-fpm"

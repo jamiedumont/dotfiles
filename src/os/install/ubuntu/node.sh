@@ -6,18 +6,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-update
-upgrade
+print_in_purple "\n   Node\n\n"
 
-./build-essentials.sh
-./caddy.sh
-#./docker.sh
-./elixir.sh
-./fzf.sh
-./git.sh
-./node.sh
-./php.sh
-./tmux.sh
+execute "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -"
 
+install_package "NodeJS" "nodejs"
 
-./cleanup.sh
+install_package "NPM" "npm"

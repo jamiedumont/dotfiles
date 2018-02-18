@@ -6,18 +6,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-update
-upgrade
+print_in_purple "\n   Caddy\n\n"
 
-./build-essentials.sh
-./caddy.sh
-#./docker.sh
-./elixir.sh
-./fzf.sh
-./git.sh
-./node.sh
-./php.sh
-./tmux.sh
+execute "curl https://getcaddy.com | bash -s personal"
 
-
-./cleanup.sh
+execute "sudo setcap cap_net_bind_service=+ep /usr/local/bin/caddy"
