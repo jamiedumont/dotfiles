@@ -14,4 +14,4 @@ execute "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
 execute "~/.fzf/install"
 
 # Add FZF to command line
-execute "source ~/.bashrc"
+execute "source ~/.fzf.bash"

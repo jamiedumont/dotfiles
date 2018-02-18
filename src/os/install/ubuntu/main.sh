@@ -10,7 +10,7 @@ update
 upgrade
 
 ./build-essentials.sh
-./docker.sh
+#./docker.sh
 ./fzf.sh
 ./git.sh
 ./tmux.sh
