@@ -11,4 +11,4 @@ echo "$(dirname "${BASH_SOURCE[0]}")"
 print_in_purple "\n   Build Essentials\n\n"
 
 # Install tools for compiling/building software from source.
-install_package "Build Essential" "build-essential"
+install_package "Build Essentials" "build-essential"
