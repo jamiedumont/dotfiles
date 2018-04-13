@@ -10,7 +10,6 @@ update
 upgrade
 
 ./build-essentials.sh
-./caddy.sh
 #./docker.sh
 ./elixir.sh
 ./fzf.sh

@@ -19,3 +19,5 @@ install_package "Elixir" "elixir"
 execute "mix local.hex" "Install Hex package manager"
 
 execute "mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez" "Install Phoenix"
+
+execute "rm erlang-solutions_1.0_all.deb" "Remove Erlang binary"
