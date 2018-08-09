@@ -52,7 +52,7 @@ call plug#end()
 
 
 " Set colourscheme
-colorscheme gotham
+" colorscheme gotham
 
 " Use csscomplete function (Plug)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
