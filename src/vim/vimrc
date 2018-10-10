@@ -72,7 +72,7 @@ augroup elixir_lsp
 augroup END
 
 " Set colourscheme
-"colorscheme gotham
+" colorscheme gotham
 
 " Use csscomplete function (Plug)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
