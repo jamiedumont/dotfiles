@@ -1,7 +1,7 @@
 [alias]
-	a = add --all
-	ai = add -i
-	#############
+  a = add --all
+  ai = add -i
+  #############
   b = branch
   #############
   c = commit
@@ -9,19 +9,20 @@
   #############
   cl = clone
   #############
-	f = fetch
+  f = fetch
   #############
-	pl = pull
+  pl = pull
   pb = pull --rebase
   #############
-	plo = pull origin
-	pbo = pull --rebase origin
+  plo = pull origin
+  pbo = pull --rebase origin
   #############
-	r = remote
-	ra = remote add
-	rr = remote rm
+  r = remote
+  ra = remote add
+  rr = remote rm
   #############
-	s = status
+  s = status
+  staged = diff --staged
 
 
 
@@ -35,8 +36,8 @@
 
 
 [user]
-	name = Jamie Dumont
-	email = jamiedumont@icloud.com
+  name = Jamie Dumont
+  email = jamiedumont@icloud.com
 
   # Don't guess the user's identity.
   useConfigOnly = true

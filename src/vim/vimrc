@@ -1,7 +1,11 @@
+scriptencoding utf-8
+set encoding=utf-8
+
+
 " If Vim Plug is not installed, install it
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -48,11 +52,27 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Completion
+Plug 'ajh17/vimcompletesme'
+
+" Elixir LS
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
 call plug#end()
 
+augroup elixir_lsp
+  autocmd!
+  autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'elixir-ls',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, '/home/jamie/elixir-ls/language_server.sh']},
+        \ 'whitelist': ['elixir', 'eelixir'],
+        \ })
+  autocmd FileType ex setlocal omnifunc=lsp#complete
+augroup END
 
 " Set colourscheme
-colorscheme gotham
+"colorscheme gotham
 
 " Use csscomplete function (Plug)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
