@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -r GITHUB_REPO="jamiedumont/dotfiles-in-progress"
+declare -r GITHUB_REPO="jamiedumont/dotfiles"
 
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPO.git"
 
