@@ -11,13 +11,12 @@ upgrade
 
 ./build-essentials.sh
 #./docker.sh
-./elixir.sh
+#./elixir.sh
 ./fzf.sh
 ./git.sh
-./hugo.sh
-./node.sh
-./php.sh
+#./hugo.sh
+#./node.sh
+#./php.sh
 ./tmux.sh
-
 
 ./cleanup.sh
