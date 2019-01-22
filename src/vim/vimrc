@@ -24,6 +24,9 @@ Plug 'tpope/vim-vinegar'
 " Emmet keyboard shortcuts
 Plug 'mattn/emmet-vim'
 
+" Directory access with '-'
+Plug 'tpope/vim-fugitive'
+
 
 " Status bar
 Plug 'vim-airline/vim-airline'
