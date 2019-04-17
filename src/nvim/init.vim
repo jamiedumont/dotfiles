@@ -28,13 +28,13 @@ function! PackagerInit() abort
   call packager#add('dracula/vim', { 'as': 'dracula' })
 
   " Add 'ends' to function definitions
-  call package#add('tpope/endwise')
+  call packager#add('tpope/vim-endwise')
 
   " Access Database from Vim
-  call package#add('tpope/dadbod')
+  call packager#add('tpope/vim-dadbod')
 
   " Elixir Language
-  call package#add('elixir-editors/vim-elixir')
+  call packager#add('elixir-editors/vim-elixir')
 
   " Language support
   call packager#add('sheerun/vim-polyglot')
