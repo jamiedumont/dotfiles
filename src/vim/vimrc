@@ -1,84 +1,77 @@
+" Use Vim settings, rather than Vi settings (much better!).
+if &compatible
+  set nocompatible
+endif
+
+" Load Packager (only when needed)
+function! PackagerInit() abort
+  packadd vim-packager
+
+  call packager#init()
+
+  " Whatever it is that Dirvish does...
+  call packager#add('justinmk/vim-dirvish')
+
+  " Emmet keyboard shortcuts
+  call packager#add('mattn/emmet-vim')
+
+  " Git wrapper
+  call packager#add('tpope/vim-fugitive')
+
+  " Git diffs
+  call packager#add('airblade/vim-gitgutter')
+
+  " Status bar
+  call packager#add('vim-airline/vim-airline')
+
+  " Dracula theme
+  call packager#add('dracula/vim', { 'as': 'dracula' })
+
+  " Language support
+  call packager#add('sheerun/vim-polyglot')
+
+  " Split vim and tmux panes with Ctrl + direction
+  call packager#add('christoomey/vim-tmux-navigator')
+
+  " Vim picker for file search
+  call packager#add('srstevenson/vim-picker')
+
+  " Vim LSP
+  call packager#add('prabirshrestha/async.vim')
+  call packager#add('prabirshrestha/vim-lsp')
+endfunction
+
+command! PackagerInstall call PackagerInit() | call packager#install()
+
 scriptencoding utf-8
 set encoding=utf-8
 
-
-" If Vim Plug is not installed, install it
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+augroup LSC
+  autocmd!
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'ElixirLS',
+    \ 'cmd': {_->[$HOME.'/.local/share/applications/lsp/language_server.sh']},
+    \ 'whitelist': ['elixir', 'eelixir']
+  \})
+augroup END
 
 " Activate syntax highlighting
 syntax enable
 
-" Not sure what to comment here...
-set nocompatible
 filetype plugin on
 
-call plug#begin('~/.vim/plugged')
-
-" Directory access with '-'
-Plug 'tpope/vim-vinegar'
-
-" Emmet keyboard shortcuts
-Plug 'mattn/emmet-vim'
-
-" Directory access with '-'
-Plug 'tpope/vim-fugitive'
-
-
-" Status bar
-Plug 'vim-airline/vim-airline'
-
-" Theme
-Plug 'whatyouhide/vim-gotham'
-
-" Language support
-Plug 'sheerun/vim-polyglot'
-
-
-" Alchemist (Elixir) tools
-Plug 'slashmili/alchemist.vim'
-let g:alchemist_tag_disable = 1
-
-
-" Git diffs
-Plug 'airblade/vim-gitgutter'
-
-
-" Split vim and tmux panes with Ctrl + direction
-Plug 'christoomey/vim-tmux-navigator'
-
-
-" Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': '.install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Completion
-Plug 'ajh17/vimcompletesme'
-
-" Elixir LS
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-
-call plug#end()
-
-augroup elixir_lsp
-  autocmd!
-  autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'elixir-ls',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, '/home/jamie/elixir-ls/language_server.sh']},
-        \ 'whitelist': ['elixir', 'eelixir'],
-        \ })
-  autocmd FileType ex setlocal omnifunc=lsp#complete
-augroup END
 
 " Set colourscheme
-" colorscheme gotham
+colorscheme dracula
 
 " Use csscomplete function (Plug)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
+" Highlight leex files as eex
+augroup leex_ft
+  au!
+  autocmd BufNewFile,BufRead *.html.leex set filetype=eelixir
+augroup END
 
 " Allow vim<>system clipboard
 set clipboard=unnamed
@@ -93,15 +86,12 @@ nnoremap <Leader>w :w<CR>
 map <Leader>, :noh<CR>
 
 " Map 'FZF :Files' to leader
-nnoremap <Leader>ff :Files<CR>
-nnoremap <Leader>pf :GFiles<CR>
+nnoremap <Leader>ff :PickerEdit<CR>
+nnoremap <Leader>fs :PickerVsplit<CR>
 
 " Use <Space> + wv/wh to create splits
 nnoremap <Leader>wv :vsplit<CR>
 nnoremap <Leader>wh :split<CR>
-
-" Open :Explore with <Space>e
-nnoremap <Leader>e :Vexplore<CR>
 
 " Show invisibles (tabs and trailing spaces)
 set list
@@ -118,3 +108,4 @@ set ruler
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set textwidth=80
